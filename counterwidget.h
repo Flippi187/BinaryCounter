@@ -13,15 +13,17 @@ class CounterWidget : public QWidget
 public:
     CounterWidget(QWidget *parent = nullptr);
     ~CounterWidget();
+    void outputLEDS();
 
 public slots:
     void updateCounter();
 
 private:
      int m_count;
+     int m_number;
      QTimer m_timer;
      Gpio m_gpio;
-
+     QLCDNumber* m_output;
 };
 
 #endif // COUNTERWIDGET_H
